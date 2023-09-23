@@ -42,6 +42,8 @@ namespace BookStore.DBOperations
                         PublishDate = new DateTime(2002, 05, 21)
                     }
                 );
+
+                context.SaveChanges();
             }
         }
     }
