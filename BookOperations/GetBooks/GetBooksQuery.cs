@@ -3,6 +3,7 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using BookStore.Common;
 
 namespace BookStore.BookOperations.GetBooks
 {
@@ -15,11 +16,23 @@ namespace BookStore.BookOperations.GetBooks
             _dbContext = dbContext;
         }
 
-        public List<Book> Handle() 
+        public List<BooksViewModel> Handle() 
         {
             var bookList = _dbContext.Books.OrderBy(x => x.Id).ToList<Book>();
 
-            return bookList;
+            List<BooksViewModel> vm = new List<BooksViewModel>();
+
+            foreach (var book in bookList)
+            {
+                vm.Add(new BooksViewModel(){
+                    Title = book.Title,
+                    PageCount = book.PageCount,
+                    Genre = ((GenreEnum)book.GenreId).ToString(),
+                    PublishDate = book.PublishDate.Date.ToString("dd/MM/yy"),
+                });
+            }
+
+            return vm;
         }
     }
 
@@ -29,6 +42,8 @@ namespace BookStore.BookOperations.GetBooks
 
         public int PageCount { get; set; }
 
-        public DateTime PublishDate { get; set; }
+        public string Genre { get; set; }
+
+        public string PublishDate { get; set; }
     }
 }
