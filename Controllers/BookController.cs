@@ -5,6 +5,7 @@ using System.Linq;
 using BookStore.DBOperations;
 using BookStore.BookOperations.GetBooks;
 using BookStore.BookOperations.CreateBook;
+using BookStore.BookOperations.GetBookDetail;
 
 namespace BookStore.Controllers
 {
@@ -29,11 +30,22 @@ namespace BookStore.Controllers
         }
 
         [HttpGet("{id}")]
-        public Book GetByID(int id)
+        public IActionResult GetByID(int id)
         {
-            var book = _context.Books.Where(book => id == book.Id).SingleOrDefault();
+            BookDetailViewModel result;
 
-            return book;
+            try
+            {
+                GetBookDetailQuery query = new GetBookDetailQuery(_context);
+                query.bookId = id;
+                result = query.Handle();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Ok(result);
         }
 
         //[HttpGet]
