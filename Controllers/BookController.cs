@@ -82,6 +82,7 @@ namespace BookStore.Controllers
 
             try
             {
+                command.bookId = id;
                 command.Model = updatedBook;
                 command.Handle();
             }
