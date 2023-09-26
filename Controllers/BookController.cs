@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using BookStore.DBOperations;
+using BookStore.BookOperations.GetBooks;
+using BookStore.BookOperations.CreateBook;
 
 namespace BookStore.Controllers
 {
@@ -18,11 +20,12 @@ namespace BookStore.Controllers
         }
 
         [HttpGet]
-        public List<Book> GetBooks()
+        public IActionResult GetBooks()
         {
-            var bookList = _context.Books.OrderBy(x => x.Id).ToList<Book>();
+            GetBooksQuery query = new GetBooksQuery(_context);
+            var result = query.Handle();
 
-            return bookList;
+            return Ok(result);
         }
 
         [HttpGet("{id}")]
@@ -42,22 +45,21 @@ namespace BookStore.Controllers
         //}
 
         [HttpPost]
-        public IActionResult AddBook([FromBody] Book newBook)
+        public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
-            var book = _context.Books.SingleOrDefault(x => x.Title == newBook.Title);
+            CreateBookCommand command = new CreateBookCommand(_context);
 
-            if(book is not null)
+            try
             {
-                return BadRequest();
+                command.Model = newBook;
+                command.Handle();   
             }
-            else
+            catch (Exception ex)
             {
-                _context.Books.Add(newBook);
-                _context.SaveChanges();
-
-                return Ok();
+                return BadRequest(ex.Message);
             }
-
+            
+            return Ok();
         }
 
         [HttpPut("{id}")]

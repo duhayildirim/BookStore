@@ -1,6 +1,4 @@
 ﻿using BookStore.DBOperations;
-using System;
-using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using BookStore.Common;
