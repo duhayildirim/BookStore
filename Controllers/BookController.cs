@@ -6,6 +6,7 @@ using BookStore.DBOperations;
 using BookStore.BookOperations.GetBooks;
 using BookStore.BookOperations.CreateBook;
 using BookStore.BookOperations.GetBookDetail;
+using BookStore.BookOperations.UpdateBook;
 
 namespace BookStore.Controllers
 {
@@ -75,27 +76,22 @@ namespace BookStore.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateBook(int id, [FromBody] Book updatedBook)
+        public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
-            var book = _context.Books.SingleOrDefault(book => id == book.Id);
+           UpdateBookCommand command = new UpdateBookCommand(_context);
 
-            if (book is null)
+            try
             {
-                return BadRequest();
+                command.Model = updatedBook;
+                command.Handle();
             }
-            else
+            catch (Exception ex) 
             {
-                book.GenreId = updatedBook.GenreId != default ? updatedBook.GenreId : book.GenreId;
-                book.PageCount = updatedBook.PageCount != default ? updatedBook.PageCount : book.PageCount;
-                book.PublishDate = updatedBook.PublishDate != default ? updatedBook.PublishDate : book.PublishDate;
-                book.Title = updatedBook.Title != default ? updatedBook.Title : book.Title;
-
-                _context.SaveChanges();
-
-                return Ok();
+                return BadRequest(ex.Message);
             }
+
+            return Ok();
         }
-
 
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
