@@ -35,10 +35,10 @@ namespace BookStore.Controllers
         public IActionResult GetByID(int id)
         {
             BookDetailViewModel result;
+            GetBookDetailQuery query = new GetBookDetailQuery(_context);
 
             try
-            {
-                GetBookDetailQuery query = new GetBookDetailQuery(_context);
+            { 
                 query.bookId = id;
                 result = query.Handle();
             }
