@@ -1,4 +1,5 @@
-﻿using BookStore.BookOperations.GetBookDetail;
+﻿using AutoMapper;
+using BookStore.BookOperations.GetBookDetail;
 using BookStore.Common;
 using BookStore.DBOperations;
 using System;
