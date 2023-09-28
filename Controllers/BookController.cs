@@ -9,6 +9,8 @@ using BookStore.BookOperations.GetBookDetail;
 using BookStore.BookOperations.UpdateBook;
 using BookStore.BookOperations.DeleteBook;
 using AutoMapper;
+using FluentValidation.Results;
+using FluentValidation;
 
 namespace BookStore.Controllers
 {
@@ -61,7 +63,10 @@ namespace BookStore.Controllers
             try
             {
                 command.Model = newBook;
-                command.Handle();   
+                CreateBookCommandValidator validator = new CreateBookCommandValidator();
+                validator.ValidateAndThrow(command);
+                command.Handle();
+
             }
             catch (Exception ex)
             {
@@ -97,7 +102,9 @@ namespace BookStore.Controllers
 
             try
             {
-                command.bookID = id;
+                DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
+                validator.ValidateAndThrow(command);
+                command.bookId = id;
                 command.Handle();
             }
             catch (Exception ex)

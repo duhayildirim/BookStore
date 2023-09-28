@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "MU67xBaRjRxvGERTmq+7PzPBKcfi8jNEImiOwU4sfyz1FXup1sWJ96SKGksu3Aq9Ai2bVFRlGkePKWaCZeteFA==",
+  "dgSpecHash": "yZjYvLJewjbY3noWg3jsDM2yVfB/QgvgWd6QzB/Qw4KFhdDi0dS14eFPi4psqI6SounSizZkNPr8uErN0Ti71A==",
   "success": true,
   "projectFilePath": "C:\\Users\\pcAdmin\\Documents\\GitHub\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pcAdmin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\pcAdmin\\.nuget\\packages\\fluentvalidation\\10.1.0\\fluentvalidation.10.1.0.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.6\\microsoft.entityframeworkcore.5.0.6.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.6\\microsoft.entityframeworkcore.abstractions.5.0.6.nupkg.sha512",

@@ -7,7 +7,7 @@ namespace BookStore.BookOperations.DeleteBook
     public class DeleteBookCommand
     {
         private readonly BookStoreDbContext _dbContext;
-        public int bookID { get; set; }
+        public int bookId { get; set; }
 
         public DeleteBookCommand(BookStoreDbContext context) 
         {
@@ -16,7 +16,7 @@ namespace BookStore.BookOperations.DeleteBook
 
         public void Handle() 
         {
-            var book = _dbContext.Books.SingleOrDefault(book => bookID == book.Id);
+            var book = _dbContext.Books.SingleOrDefault(book => bookId == book.Id);
 
             if (book is null)
             {
