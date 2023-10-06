@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yZjYvLJewjbY3noWg3jsDM2yVfB/QgvgWd6QzB/Qw4KFhdDi0dS14eFPi4psqI6SounSizZkNPr8uErN0Ti71A==",
+  "dgSpecHash": "eKFO31+4dEMfSZjO9eMzLb3uv7tWzcjVGCrkt9uvxoYZMBbG7f0jINHNRylraoojQb++tL3bsBRJ08da7xD10g==",
   "success": true,
   "projectFilePath": "C:\\Users\\pcAdmin\\Documents\\GitHub\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "C:\\Users\\pcAdmin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\pcAdmin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\pcAdmin\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

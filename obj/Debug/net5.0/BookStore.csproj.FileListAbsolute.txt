@@ -84,3 +84,4 @@ C:\Users\pcAdmin\Documents\GitHub\BookStore\bin\Debug\net5.0\runtimes\win\lib\ne
 C:\Users\pcAdmin\Documents\GitHub\BookStore\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\pcAdmin\Documents\GitHub\BookStore\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\pcAdmin\Documents\GitHub\BookStore\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\pcAdmin\Documents\GitHub\BookStore\bin\Debug\net5.0\Newtonsoft.Json.dll
